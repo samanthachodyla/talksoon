@@ -59,13 +59,33 @@ Current hunch: mostly forgetting.
 ## Decided
 
 - **Platform: iPhone only.** No Android.
+- **Form: home-screen web app (PWA).** Not a native/App Store app for now.
+
+## Texting: what's actually possible
+
+A web app **cannot** send texts from the user's own number or iMessage —
+Apple doesn't allow any app or website to do that silently.
+
+| Option | Sent from | Verdict |
+|---|---|---|
+| **`sms:` link** — Send opens Messages with recipient + text pre-filled, user taps send | User's real number / iMessage (blue bubble) | ✅ Use this. No permissions, free, feels personal |
+| **SMS service (e.g. Twilio)** — app sends on user's behalf | A random business number, not the user's | ❌ Recipients see a stranger; "sending so much love" from an unknown number reads as spam. Also needs carrier registration, per-text costs, consent rules |
+
+So "allow it to text for them" becomes: **one tap per message, from their own phone.**
+
+## Onboarding (proposed)
+
+1. Open a link in Safari
+2. Add to Home Screen (iOS has no install prompt — show simple illustrated steps)
+3. Enter phone number → get a sign-in code by text (this is login, not texting permission)
+4. Allow microphone
+5. Done — big record button
 
 ## Open decisions
 
 | Question | Proposed default (if no answer) |
 |---|---|
-| Native iOS app or iPhone home-screen web app? | Open — native gets contacts, Siri, in-app Messages sheet, but needs a Mac + Xcode to build/run; web app is faster to try this week |
-| Just me, or other people too? | Just me — no accounts/login in v1 |
+| Just me, or other people too? | Open — "once they download it" suggests others; that adds accounts, privacy, and AI cost per user |
 | Exact words or lightly polished? | Exact words, light grammar cleanup only |
 | How to build? | Next.js (same stack as other projects) |
 
