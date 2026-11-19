@@ -85,7 +85,7 @@ So "allow it to text for them" becomes: **one tap per message, from their own ph
 
 | Question | Proposed default (if no answer) |
 |---|---|
-| Just me, or other people too? | Open — "once they download it" suggests others; that adds accounts, privacy, and AI cost per user |
+| Just me, or other people too? | **Decided: just me for v1.** Use it for ~2 weeks before building for others |
 | Exact words or lightly polished? | Exact words, light grammar cleanup only |
 | How to build? | Next.js (same stack as other projects) |
 
@@ -99,3 +99,17 @@ So "allow it to text for them" becomes: **one tap per message, from their own ph
 - Send button per card → opens Messages with the text pre-filled (`sms:` link on web, or the native Messages sheet in an iOS app)
 
 Not in v1: auto-sending, contact import, Siri/CarPlay, accounts.
+
+## v1 build status
+
+Built: big talk button (iPhone dictation), editable drafts per person,
+"Who's this?" person memory (stored on the phone), Send via pre-filled
+Messages, "Just send" for unknown people, sent list with undo, offline memo
+saving, passcode protection, light/dark mode, home-screen icon.
+
+Tested in an emulated iPhone (Chromium) with the AI step faked. **Not yet
+tested on a real iPhone or against the live Claude API.**
+
+### The two-week test
+Did I actually reach for it at pickup? Which texts did I edit before sending,
+and why? Did I skip any of them?
